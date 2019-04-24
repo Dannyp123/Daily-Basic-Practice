@@ -11,11 +11,18 @@ def prac():
         elif elavation >= 0 and above_sealevel == False:
             above_sealevel = True
 
+    return counter_below_sealevel
+
     print("Number of times below sealevel: {}".format(counter_below_sealevel))
 
 
+def test_prac():
+    print(prac() == 3)
+
+
 def main():
-    prac()
+    # prac()
+    test_prac()
 
 
 if __name__ == "__main__":
