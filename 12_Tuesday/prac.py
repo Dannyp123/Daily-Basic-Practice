@@ -1,8 +1,13 @@
 def repetiton(letters, truncate_at):
     num_of_a = letters.count("a")
-    string_length = max(1, len(letters[:truncate_at]))
-    stop = num_of_a * truncate_at // string_length
-    print(stop)
+    if len(letters) > 0 and letters.count("a") > 0:
+        remainder = truncate_at % len(letters)
+        string_length = letters[:remainder].count("a")
+        num = len(letters)
+        answer = (truncate_at // num) * (num_of_a) + (string_length)
+    else:
+        answer = 0
+    print(answer)
 
 
 def logic():
@@ -10,6 +15,7 @@ def logic():
     repetiton("a", 50)
     repetiton("A", 100)
     repetiton(" ", 1)
+    repetiton("ab", 5)
 
 
 if __name__ == "__main__":
